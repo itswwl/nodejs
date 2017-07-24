@@ -1,0 +1,21 @@
+{
+  "name": "ejs-microblog",
+  "description": "前端js依赖",
+  "main": "",
+  "authors": [
+    "itswwl <2436951731@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/javascripts",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

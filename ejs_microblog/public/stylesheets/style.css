@@ -1,0 +1,15 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.footer{
+  line-height: 18px;
+  height: 20px;
+  text-align: left;
+  font-size: 20px;
+}

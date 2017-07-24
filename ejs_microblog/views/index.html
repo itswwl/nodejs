@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script src="/javascripts/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <br>
+
+    <div class="footer">
+
+       <a href="/login" >登录</a>&nbsp;&nbsp;<a href="register">注册</a>
+    </div>
+    <div>
+
+      <button id="ajax">ajax获取数据</button>
+    </div>
+  <script type="application/javascript">
+
+//    $(".footer").click(function () {
+//      alert("==");
+//    });
+    $("#ajax").click(function () {
+      $.ajax({
+        "url":"/ajax",
+        "type":"get",
+        "success":function (data) {
+          console.info(data);
+        }
+
+      })
+    });
+  </script>
+  </body>
+</html>
