@@ -68,6 +68,18 @@
  *  Node出错崩溃了怎么办
  *  http://www.oschina.net/question/433035_171960
  *
+ *  使用expressjs Ejs框架时候，怎么给请求页面发送数据？
+ *  https://segmentfault.com/q/1010000004896880
+ *
+ *  Mongoose Schemas中定义日期以及timestamps选项的妙用
+ *  http://www.cnblogs.com/duhuo/p/6232534.html
+ *
+ *  用express无法获取前台利用jquery post过来的数据
+ *  https://segmentfault.com/q/1010000005768772
+ *
+ *  post有时会得到404 not found报错
+ *  http://cnodejs.org/topic/5545a335c5441de9545a3b89
+ *
  *
  * */
 
@@ -86,10 +98,20 @@ var session = require("express-session");
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+///------------------------------------------------------------------------------------
+
+///------------------------------------------------------------------------------------
 var app = express();
 
 global.dbhandler = require("./database/dbhandler");
 global.db = mongoose.connect("mongodb://127.0.0.1/node",{useMongoClient: true});
+
+
+///------------------------------------------------------------------------------------
+// var db = require('./database2/db');
+
+var article = require('./routes/article');
+///------------------------------------------------------------------------------------
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -151,6 +173,11 @@ app.use('/register', index);
 app.use('/home', index);
 app.use('/ajax', index);
 app.use('/logout', index);
+
+///------------------------------------------------------------------------------------
+app.use('/article', article);
+app.use('/article/articleList', article);
+///------------------------------------------------------------------------------------
 
 
 // // catch 404 and forward to error handler

@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>home</title>
+    <script src="/javascripts/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-<p>Welcome to <%= user.username %> </p>
+<p>Welcome to <%= user.username %> </p><a href="/article/articleList">文章列表</a>
 <p><a href="/logout">退出</a></p>
+
+
+<div>
+
+    <label>标题</label><input id="title" name="title" /><br/>
+    <label>作者</label><input id="author" name="author" /><br/>
+    <label>阅读数量</label><input id="read" name="read" /><br/>
+    <label>内容</label><textarea id="content" name="content" ></textarea>
+    <button id="submit">提交</button>
+</div>
+
+<script type="application/javascript">
+
+    $("#submit").click(function () {
+        $.ajax({
+            url:"/article",
+            data:{
+                title:$("#title").val(),
+                author:$("#author").val(),
+                read:$("#read").val(),
+                content:$("#content").val()
+            },
+            type:"post",
+            success:function (data) {
+                console.info(data);
+            }
+        });
+    });
+
+</script>
+
 </body>
 </html>

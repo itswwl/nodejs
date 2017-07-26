@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章列表</title>
+</head>
+<body>
+<% docs.forEach(function(doc){ %>
+    <%= doc.title %> -- <%= doc.author %> -- <%= doc.read %> -- <%= doc.createTime %> -- <%= doc.content %><br/>
+<% }) %>
+</body>
+</html>

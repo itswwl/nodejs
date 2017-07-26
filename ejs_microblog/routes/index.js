@@ -69,11 +69,13 @@ router.get("/ajax",function (req, res) {
   res.json({"name":"wl","age":100,"isM":true,"birthday":new Date()});
 });
 
+
+
 /*  home */
 router.get("/home",function (req, res) {
   if(!req.session.user){
     req.session.error = "请先登录";
-    res.redirect("/register");
+    res.redirect("/login");
   }
   res.render("home");
 });
